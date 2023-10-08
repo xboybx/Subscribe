@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBSCRIBE Button FUunctionality</title>
+
+    <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Lexend+Mega:wght@600&family=Young+Serif&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *{
+        box-sizing: border-box;
+        }
+        body {
+            background-color: #161a1d;
+        }
+
+        h1 {
+            text-align: center;
+            /* font-family: 'Archivo Narrow', sans-serif; */
+            /* font-family: 'Lexend Mega', sans-serif; */
+            font-family: 'Young Serif', serif;
+            letter-spacing: 0.60rem;
+            font-weight: bolder;
+            color: #f5f3f4;
+        }
+
+        h3 {
+            text-align: center;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            font-family: 'Archivo Narrow', sans-serif;
+            letter-spacing: 0.50rem;
+            font-weight: bolder;
+            font-size: 1rem;
+            color: #e5383b;
+            padding-top: 2rem;
+            animation: tilt-n-move-shaking 1s ease-in infinite;
+        }
+
+        /* @keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+} */
+        @keyframes tilt-n-move-shaking {
+            0% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.01);
+                color: #b1a7a6
+            }
+
+            100% {
+                transform: scale(1)
+            }
+
+
+        }
+
+
+        .video {
+            height: 30rem;
+            width: 53rem;
+            border-radius: 20px;
+        }
+
+       .video-stream html5-main-video {
+            
+    width: 849px;
+    height: 485px;
+ 
+        }
+
+        .videodiv {
+            height: 32rem;
+            width: 60rem;
+            display: inline-block;
+            margin-left: 3.5rem;
+            margin-top: 1.5rem;
+            object-fit: cover;
+        }
+
+        .container {
+            height: 35rem;
+            width: 60rem;
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            margin-top: 2rem;
+            margin-left: 11.8rem;
+            border-radius: 20px;
+        }
+
+        #icon1,
+        #icon2,
+        #icon3 {
+            font-size: 1.10rem;
+            color: white;
+            padding-right: 1rem;
+        }
+
+        #icon4 {
+            font-size: 1.5rem;
+            color: white;
+            position: relative;
+            left: 45.5rem;
+            bottom: 1.9rem;
+        }
+
+        .controls {
+            position: relative;
+            left: 6rem;
+            bottom: 0.50em;
+
+        }
+
+        .JS-btn {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 0.25rem;
+            border: none;
+            border-radius: 10px;
+            color: whitesmoke;
+            background-color: #CD201F;
+            height: 2rem;
+            width: 8rem;
+            padding: 10px, 5px, 10px, 5px;
+            font-weight: 500;
+            position: relative;
+            left: 46.57rem;
+            bottom: 2.25rem;
+            transition: 0.50s;
+        }
+
+        .JS-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .is-subscribed {
+            background-color: rgb(206, 206, 206);
+            color: #CD201F;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>SUBSCRIBE BUTTON FUNCTIONALITY</h1>
+    <h3>Click Subscribe Button</h3>
+    <div class="container">
+        <div class="videodiv">
+            <iframe class="video" src="https://www.youtube.com/embed/ga0mSu1HVzE?si=srpUvgiafpz_GUOw"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <!-- <iframe class="video" src="https://www.youtube.com/embed/1gBqXHCS4l8?si=RO42BYa83vyg_97Y"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe> -->
+            <!-- <video src="uuvideo.mp4"  CONTROLS LOOP height="480PX" 
+                width="920PX" style="border-radius: 30px; object-fit:cover;"></video> -->
+        </div>
+        <div class="controls">
+            <i class="fa-solid fa-backward-fast" id="icon1"></i>
+            <i class="fa-solid fa-play" id="icon2"></i>
+            <i class="fa-solid fa-forward-fast" id="icon3"></i>
+        </div>
+        <i class="fa-solid fa-expand" id="icon4"></i>
+
+        <button class="JS-btn">SUBSCRIBE</button>
+    </div>
+
+
+    <script>
+        // function btnclick() {
+        //     const buttonElement = (document.querySelector("button"));
+
+        //     if (buttonElement.innerText === 'SUBSCRIBE') {
+        //         buttonElement.innerText = 'SUBSCRIBED';
+
+
+        //         buttonElement.classList.add('is-subscribed');
+        //     }
+        //     else {
+        //         buttonElement.innerText = 'SUBSCRIBE';
+        //         buttonElement.classList.remove('is-subscribed');
+        //     }
+        // }
+
+
+        let js_button = document.querySelector("button");
+        var flag = 0;
+
+        js_button.addEventListener("click", () => {
+
+            if (flag == 0) {
+                
+                js_button.textContent = "SUBSCRIBED"
+                js_button.classList.add("is-subscribed");
+                js_button.style.letterSpacing = "0.10rem"
+                flag++;
+                
+            }
+            else {
+                
+                js_button.textContent = "SUBSCRIBE"
+                js_button.classList.remove("is-subscribed");
+                
+                flag--;
+                
+            }
+            // confirm("You will be Subscribed");
+            // confirm("You have UnSubscribed");
+        });
+
+    </script>
+</body>
+
+</html>
